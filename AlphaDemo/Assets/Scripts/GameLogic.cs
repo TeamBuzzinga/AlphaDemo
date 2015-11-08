@@ -2,11 +2,18 @@
 using System.Collections;
 
 public class GameLogic : MonoBehaviour {
-    public float maxTime;
+    public float maxTime = 300;
+    public int keysNeeded = 1;
 
     float gameTimer;
     bool gameEnded;
+    int keysCollected;
     
+    void Start()
+    {
+        gameTimer = maxTime;
+    }
+
     void Update()
     {
         updateTimer();
@@ -23,12 +30,25 @@ public class GameLogic : MonoBehaviour {
 
     bool checkPlayerTimeEnded()
     {
-        return false;
+        return gameTimer <= 0;
     }
 
     public float getGameTimer()
     {
         return gameTimer;
+    }
+
+    public void collectKey(bool collectedKey)
+    {
+        if (collectedKey)
+        {
+            keysCollected++;
+        }
+    }
+
+    public bool hasKeys()
+    {
+        return keysCollected >= keysNeeded;
     }
 
 }
