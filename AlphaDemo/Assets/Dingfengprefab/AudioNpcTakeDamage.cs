@@ -18,4 +18,13 @@ public class AudioNpcTakeDamage : MonoBehaviour {
 			npc.AI.Mind.AI.WorkingMemory.SetItem<bool>("stun",true);
 			}
 		}
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            npc.AI.Mind.AI.WorkingMemory.SetItem<bool>("stun", true);
+        }
+    }
 }
