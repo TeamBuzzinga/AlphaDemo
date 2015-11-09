@@ -4,6 +4,7 @@ using System.Collections;
 public class GameLogic : MonoBehaviour {
     public float maxTime = 300;
     public int keysNeeded = 1;
+    public GameOverManager gManager;
 
     float gameTimer;
     bool gameEnded;
@@ -26,6 +27,10 @@ public class GameLogic : MonoBehaviour {
     void updateTimer()
     {
         gameTimer = Mathf.MoveTowards(gameTimer, 0, Time.deltaTime);
+        if (gameTimer <= 0)
+        {
+            gManager.triggerLoseGame();
+        }
     }
 
     bool checkPlayerTimeEnded()
