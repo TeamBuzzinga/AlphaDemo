@@ -48,6 +48,7 @@ public class GameLogic : MonoBehaviour {
 
     public bool hasKeys()
     {
+        print(keysCollected >= keysNeeded);
         return keysCollected >= keysNeeded;
     }
 
