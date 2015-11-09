@@ -54,9 +54,9 @@
      <Compile Include="Assets\AI\Actions\take_damage.cs" />
      <Compile Include="Assets\CollectKeys.cs" />
      <Compile Include="Assets\Dingfengprefab\AudioNpcTakeDamage.cs" />
-     <Compile Include="Assets\Dingfengprefab\GameOverManager.cs" />
      <Compile Include="Assets\Dingfengprefab\customAI.cs" />
      <Compile Include="Assets\DoorOpen.cs" />
+     <Compile Include="Assets\GameOverManager.cs" />
      <Compile Include="Assets\Scripts\BallMechanics.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
@@ -73,6 +73,8 @@
      <Compile Include="Assets\Scripts\WalkMechanics.cs" />
      <Compile Include="Assets\SidFolder\FootstepsMute.cs" />
      <Compile Include="Assets\SidFolder\FootstepsOn.cs" />
+     <Compile Include="Assets\WinDoorScript.cs" />
+     <Compile Include="Assets\WinningScript.cs" />
      <None Include="Assets\TaichiCharacterPack\Shaders\toon_cutoff.shader" />
      <None Include="Assets\Objects\CeilingLamp\archibase.net.txt" />
      <None Include="Assets\RAIN\Editor\Shaders\AspectSphereShader.shader" />

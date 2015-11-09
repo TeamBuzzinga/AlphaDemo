@@ -2,10 +2,9 @@
 using RAIN.Core;
 using UnityEngine.UI;
 
-namespace CompleteProject
-{
-    public class GameOverManager : MonoBehaviour
+ public class GameOverManager : MonoBehaviour
     {
+        public Text gameOverText;
 		
         Animator anim;                          // Reference to the animator component.
 
@@ -50,14 +49,18 @@ namespace CompleteProject
 
         public void triggerLoseGame()
         {
+            
+           
             anim.SetTrigger("GameOver");
             
         }
 
         public void triggerWinGame()
         {
+            gameOverText.text = "You win";
+            anim.SetTrigger("GameOver");
+         }
 
-        }
-    }
+        
      
 }
