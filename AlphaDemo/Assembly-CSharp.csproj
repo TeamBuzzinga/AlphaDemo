@@ -52,6 +52,7 @@
      <Compile Include="Assets\AI\Actions\destroy_body.cs" />
      <Compile Include="Assets\AI\Actions\prediction.cs" />
      <Compile Include="Assets\AI\Actions\take_damage.cs" />
+     <Compile Include="Assets\CollectKeys.cs" />
      <Compile Include="Assets\Dingfengprefab\AudioNpcTakeDamage.cs" />
      <Compile Include="Assets\Dingfengprefab\GameOverManager.cs" />
      <Compile Include="Assets\Dingfengprefab\customAI.cs" />
@@ -100,11 +101,17 @@
      <None Include="Assets\Objects\Plant 2\archibase.net.txt" />
      <None Include="Assets\Objects\Switch\archibase.net.txt" />
      <None Include="Assets\Objects\Sink\archibase.net.txt" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="RAIN">
  <HintPath>C:/Users/Dingfeng/Documents/GitHub/AlphaDemo/AlphaDemo/Assets/RAIN/RAIN.dll</HintPath>
