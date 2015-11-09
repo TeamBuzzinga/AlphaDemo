@@ -4,6 +4,7 @@ using System.Collections;
 
 public class HUDScript : MonoBehaviour {
     public Text timerText;
+    public Image keyImage;
     public GameLogic gameLogic;
 
     void Update()
@@ -12,5 +13,6 @@ public class HUDScript : MonoBehaviour {
         int seconds = (int)(gameLogic.getGameTimer() - min * 60);
         string time = min.ToString("00") + ":" + seconds.ToString("00");
         timerText.text = time;
+        keyImage.enabled = gameLogic.hasKeys();
     }
 }

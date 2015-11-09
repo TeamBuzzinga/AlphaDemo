@@ -51,4 +51,10 @@ public class GameLogic : MonoBehaviour {
         return keysCollected >= keysNeeded;
     }
 
+    //true if player has won the game. false if they have lost
+    public void triggerPlayerWin(bool playerWin)
+    {
+
+    }
+
 }
