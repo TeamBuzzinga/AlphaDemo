@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using RAIN.Core;
+using UnityEngine.UI;
 
 namespace CompleteProject
 {
@@ -40,11 +41,23 @@ namespace CompleteProject
 
 
 			if (catch1 + catch2 > 2) {
-				anim.SetTrigger ("GameOver");
-				restartTimer+=Time.deltaTime;
-				if(restartTimer>=restartDelay)
+                restartTimer += Time.deltaTime;
+                triggerLoseGame();
+                if (restartTimer>=restartDelay)
 					Application.LoadLevel(Application.loadedLevel);
 			}
         }
+
+        public void triggerLoseGame()
+        {
+            anim.SetTrigger("GameOver");
+            
+        }
+
+        public void triggerWinGame()
+        {
+
+        }
     }
+     
 }
