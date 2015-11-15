@@ -86,7 +86,6 @@
     <Compile Include="Assets\Dingfengprefab\customAI.cs" />
     <Compile Include="Assets\DoorOpen.cs" />
     <Compile Include="Assets\GameOverManager.cs" />
-    <Compile Include="Assets\RyanFolder\Scripts\FolllowPath.cs" />
     <Compile Include="Assets\Scripts\BallMechanics.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
