@@ -374,6 +374,23 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "\nInbetween bone default rotation found in this file
+      is different from the one found in the source avatar:\n\t'Spine1' : rotation
+      error = 4.580038 deg\n\t'Spine3' : rotation error = 4.579997 deg\n\t'LeftArmRoll'
+      : rotation error = 2.212954 deg\n\t'LeftForeArmRoll' : rotation error = 31.232283
+      deg\n\t'RightArmRoll' : rotation error = 0.512674 deg\n\t'RightForeArmRoll'
+      : rotation error = 22.097847 deg\n\nClip 'Take 001' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Spine1' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Spine3' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'LeftArmRoll'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'LeftForeArmRoll'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'RightArmRoll'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'RightForeArmRoll'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
@@ -401,7 +418,7 @@ ModelImporter:
       keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 01000000010000000000000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
       transformMask:
@@ -1227,7 +1244,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: m01_schoolwear_000_h(Clone)
+    - name: m01_blazer_000_h(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -1237,7 +1254,7 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    - name: m01_schoolwear_000_h
+    - name: m01_blazer_000_h
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -1489,16 +1506,16 @@ ModelImporter:
       transformModified: 1
     - name: Head
       position: {x: 3.14205617e-09, y: .0586222932, z: .0209694058}
-      rotation: {x: 4.44865873e-06, y: 6.81372573e-15, z: -2.30329183e-13, w: 1}
+      rotation: {x: 4.44865873e-06, y: 3.26101205e-15, z: -2.30329211e-13, w: 1}
       scale: {x: .999996126, y: .999996185, z: .999996126}
       transformModified: 1
     - name: face
       position: {x: 0, y: 0, z: 0}
-      rotation: {x: -4.97379969e-13, y: -6.10745786e-18, z: 2.57518353e-20, w: 1}
+      rotation: {x: -4.97379969e-13, y: -6.10745786e-18, z: 2.57518369e-20, w: 1}
       scale: {x: .99999994, y: 1, z: .99999994}
       transformModified: 1
     - name: atama_n
-      position: {x: -6.92977342e-10, y: .0319339, z: .00311575923}
+      position: {x: -6.92977287e-10, y: .0319339, z: .00311575923}
       rotation: {x: -.0739304945, y: .703231335, z: -.073930487, w: .703231394}
       scale: {x: 1, y: .999999881, z: 1.00000012}
       transformModified: 1
@@ -1553,12 +1570,12 @@ ModelImporter:
       scale: {x: .999999702, y: 1.00000012, z: 1}
       transformModified: 1
     - name: eyerid1_Left
-      position: {x: -.102303311, y: .00049378624, z: -.027907297}
+      position: {x: -.102303304, y: .000493787811, z: -.027907297}
       rotation: {x: .073930487, y: -.703231275, z: .0739304796, w: .703231394}
       scale: {x: .999999702, y: 1.00000012, z: 1}
       transformModified: 1
     - name: eyerid1_Right
-      position: {x: -.102302469, y: .000489761878, z: .0279091541}
+      position: {x: -.102302462, y: .00048976345, z: .0279091541}
       rotation: {x: .703231454, y: .073930487, z: .703231215, w: -.0739304796}
       scale: {x: .999999702, y: 1.00000012, z: 1}
       transformModified: 1
@@ -1603,7 +1620,7 @@ ModelImporter:
       scale: {x: 1.00000024, y: .99999994, z: 1.00000012}
       transformModified: 1
     - name: chin
-      position: {x: -.0872920901, y: -4.48688382e-07, z: -1.17755778e-08}
+      position: {x: -.0872920901, y: -4.48688382e-07, z: -1.1775577e-08}
       rotation: {x: -.173858553, y: -.685400009, z: -.173858523, w: .685400069}
       scale: {x: 1.00000024, y: .99999994, z: 1.00000012}
       transformModified: 1
@@ -1648,17 +1665,17 @@ ModelImporter:
       scale: {x: .999999702, y: 1.00000012, z: 1}
       transformModified: 1
     - name: mayu
-      position: {x: -.116140783, y: 2.62205845e-07, z: -7.46990025e-09}
+      position: {x: -.116140783, y: 2.62205845e-07, z: -7.46989937e-09}
       rotation: {x: .073930487, y: -.703231275, z: .0739304796, w: .703231394}
       scale: {x: .999999702, y: 1.00000012, z: 1}
       transformModified: 1
     - name: eyebrow_a_Left
-      position: {x: -.0184553042, y: .00825672131, z: -.000751795713}
+      position: {x: -.0184553042, y: .00825672038, z: -.000751810847}
       rotation: {x: 2.13848452e-05, y: 4.51321721e-05, z: -.00298769004, w: .999995589}
       scale: {x: .99999994, y: .99999994, z: 1}
       transformModified: 1
     - name: eyebrow_b_Left
-      position: {x: -.0244859178, y: .00660297135, z: -.00557691883}
+      position: {x: -.0244859178, y: .00660297228, z: -.00557690393}
       rotation: {x: 2.10880424e-09, y: 3.40789047e-05, z: 6.02398131e-10, w: 1}
       scale: {x: 1.00000012, y: .99999994, z: 1}
       transformModified: 1
@@ -1669,12 +1686,12 @@ ModelImporter:
       transformModified: 1
     - name: eyebrow_a_Right
       position: {x: .018455347, y: .00827318057, z: .00050790864}
-      rotation: {x: 1.0504225e-08, y: -4.19158468e-08, z: 4.40594672e-09, w: 1}
+      rotation: {x: 1.0504225e-08, y: -4.19158432e-08, z: 4.40594672e-09, w: 1}
       scale: {x: .99999994, y: .99999994, z: 1}
       transformModified: 1
     - name: eyebrow_b_Right
       position: {x: .024490824, y: .00660145422, z: -.00557683082}
-      rotation: {x: -4.3810946e-09, y: 3.04681986e-15, z: 2.26831029e-16, w: 1}
+      rotation: {x: -4.3810946e-09, y: 6.59953354e-15, z: 2.26831003e-16, w: 1}
       scale: {x: 1.00000012, y: .99999994, z: 1}
       transformModified: 1
     - name: temple_Right
@@ -1683,18 +1700,18 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: nose
-      position: {x: -.117594644, y: -.0542525053, z: -9.40525879e-09}
+      position: {x: -.117594644, y: -.0542525053, z: -9.40525791e-09}
       rotation: {x: .073930487, y: -.703231275, z: .0739304796, w: .703231394}
       scale: {x: .999999702, y: 1.00000012, z: 1}
       transformModified: 1
     - name: nostrir_Left
       position: {x: -.0121657001, y: -.00244790595, z: -.0198948104}
-      rotation: {x: 1.0504225e-08, y: -4.19158468e-08, z: 4.40594672e-09, w: 1}
+      rotation: {x: 1.0504225e-08, y: -4.19158432e-08, z: 4.40594672e-09, w: 1}
       scale: {x: .99999994, y: .99999994, z: 1}
       transformModified: 1
     - name: nostrir_Right
       position: {x: .012165742, y: -.00244694948, z: -.0198947899}
-      rotation: {x: 1.0504225e-08, y: -4.19158468e-08, z: 4.40594672e-09, w: 1}
+      rotation: {x: 1.0504225e-08, y: -4.19158432e-08, z: 4.40594672e-09, w: 1}
       scale: {x: .99999994, y: .99999994, z: 1}
       transformModified: 1
     - name: tail_of_eye_Left
@@ -1708,18 +1725,18 @@ ModelImporter:
       scale: {x: .999999702, y: 1.00000012, z: 1}
       transformModified: 1
     - name: u_lip_center
-      position: {x: -.0998694748, y: -.0748014525, z: -9.08727316e-09}
+      position: {x: -.0998694748, y: -.0748014525, z: -9.08727227e-09}
       rotation: {x: .073930487, y: -.703231275, z: .0739304796, w: .703231394}
       scale: {x: .999999702, y: 1.00000012, z: 1}
       transformModified: 1
     - name: lip_top_Left
       position: {x: -.00873932708, y: -.000185306606, z: -.00239637308}
-      rotation: {x: 1.0504225e-08, y: -4.19158468e-08, z: 4.40594672e-09, w: 1}
+      rotation: {x: 1.0504225e-08, y: -4.19158432e-08, z: 4.40594672e-09, w: 1}
       scale: {x: .99999994, y: .99999994, z: 1}
       transformModified: 1
     - name: lip_top_Right
       position: {x: .00874285679, y: -.000182447067, z: -.00239643059}
-      rotation: {x: 1.0504225e-08, y: -4.19158468e-08, z: 4.40594672e-09, w: 1}
+      rotation: {x: 1.0504225e-08, y: -4.19158432e-08, z: 4.40594672e-09, w: 1}
       scale: {x: .99999994, y: .99999994, z: 1}
       transformModified: 1
     - name: Glasses_Null
@@ -1885,9 +1902,11 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 0f4d3b4cbf56b1b43b75648d868b831e,
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 31609399e33f4fe4295a9ab0924c0eeb,
     type: 3}
   animationType: 3
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
