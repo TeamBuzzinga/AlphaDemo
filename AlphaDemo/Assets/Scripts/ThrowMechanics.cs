@@ -22,6 +22,10 @@ public class ThrowMechanics : MonoBehaviour {
     void Update()
     {
         updateTimers();
+        if (Input.GetButtonDown("Fire1"))
+        {
+            throwBall(true);
+        }
 
     }
 
