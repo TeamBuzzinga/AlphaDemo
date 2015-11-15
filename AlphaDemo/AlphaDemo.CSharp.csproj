@@ -51,11 +51,17 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
@@ -74,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AI\Actions\action.cs" />
     <Compile Include="Assets\AI\Actions\catch_player.cs" />
     <Compile Include="Assets\AI\Actions\catch_player2.cs" />
     <Compile Include="Assets\AI\Actions\catch_player3.cs" />
@@ -82,8 +89,22 @@
     <Compile Include="Assets\AI\Actions\take_damage.cs" />
     <Compile Include="Assets\Dingfengprefab\GameOverManager.cs" />
     <Compile Include="Assets\Dingfengprefab\customAI.cs" />
+    <Compile Include="Assets\Scripts\BallMechanics.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\GameLogic.cs" />
     <Compile Include="Assets\Scripts\HUDScript.cs" />
+    <Compile Include="Assets\Scripts\NPC\NPCmovement.cs" />
+    <Compile Include="Assets\Scripts\NPC\cam.cs" />
+    <Compile Include="Assets\Scripts\NpcTakeDamage.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerWalkMechanics.cs" />
+    <Compile Include="Assets\Scripts\RyanCameralController.cs" />
+    <Compile Include="Assets\Scripts\TPCamera.cs" />
+    <Compile Include="Assets\Scripts\ThrowMechanics.cs" />
+    <Compile Include="Assets\Scripts\WalkMechanics.cs" />
+    <Compile Include="Assets\SidFolder\FootstepsMute.cs" />
+    <Compile Include="Assets\SidFolder\FootstepsOn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Animations\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
