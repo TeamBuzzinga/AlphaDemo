@@ -169,6 +169,7 @@
     <None Include="Assets\RAIN\Editor\Shaders\VisualSensorRingShader.shader" />
     <None Include="Assets\RAIN\Editor\Shaders\WaypointShader.shader" />
     <None Include="Assets\RAIN\ReleaseNotes.txt" />
+    <None Include="Assets\Resources\highscores.txt" />
     <None Include="Assets\TaichiCharacterPack\Readme.txt" />
     <None Include="Assets\TaichiCharacterPack\Releasenote.txt" />
     <None Include="Assets\TaichiCharacterPack\Shaders\toon_cutoff.shader" />

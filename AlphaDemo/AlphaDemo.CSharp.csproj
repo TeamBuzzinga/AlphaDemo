@@ -86,11 +86,15 @@
     <Compile Include="Assets\Dingfengprefab\customAI.cs" />
     <Compile Include="Assets\DoorOpen.cs" />
     <Compile Include="Assets\GameOverManager.cs" />
+    <Compile Include="Assets\RyanFolder\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\BallMechanics.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\GameLogic.cs" />
     <Compile Include="Assets\Scripts\HUDScript.cs" />
+    <Compile Include="Assets\Scripts\Menu\HighScores.cs" />
+    <Compile Include="Assets\Scripts\Menu\ScreenManager.cs" />
+    <Compile Include="Assets\Scripts\Menu\StartGame.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCmovement.cs" />
     <Compile Include="Assets\Scripts\NPC\cam.cs" />
     <Compile Include="Assets\Scripts\NpcTakeDamage.cs" />
@@ -131,6 +135,7 @@
     <None Include="Assets\RAIN\Editor\Shaders\VisualSensorRingShader.shader" />
     <None Include="Assets\RAIN\Editor\Shaders\WaypointShader.shader" />
     <None Include="Assets\RAIN\ReleaseNotes.txt" />
+    <None Include="Assets\Resources\highscores.txt" />
     <None Include="Assets\TaichiCharacterPack\Readme.txt" />
     <None Include="Assets\TaichiCharacterPack\Releasenote.txt" />
     <None Include="Assets\TaichiCharacterPack\Shaders\toon_cutoff.shader" />
