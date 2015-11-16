@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class MenuManager : MonoBehaviour {
+    public Animator cameraAnimator;
     Animator menuAnim;
 
     void Start()
@@ -16,7 +17,8 @@ public class MenuManager : MonoBehaviour {
 
     public void optionsPressed()
     {
-
+        cameraAnimator.SetTrigger("Options");
+        menuAnim.SetTrigger("Options");
     }
 
     public void playButtonPressed()
@@ -24,8 +26,9 @@ public class MenuManager : MonoBehaviour {
 
     }
 
-    public void creeditsButtonPresed()
+    public void creditsButtonPresed()
     {
-
+        cameraAnimator.SetTrigger("Credits");
+        menuAnim.SetTrigger("Credits");
     }
 }
