@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu\HighScores.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerController.cs">
     <Files>
-      <File FileName="Assets\Scripts\Menu\HighScores.cs" Line="23" Column="10" />
-      <File FileName="Assets\Scripts\Menu\StartGame.cs" Line="10" Column="1" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="177" Column="1" />
+      <File FileName="Assets\Scripts\ThrowMechanics.cs" Line="62" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

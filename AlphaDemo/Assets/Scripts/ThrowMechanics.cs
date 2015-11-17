@@ -47,24 +47,36 @@ public class ThrowMechanics : MonoBehaviour {
         }
     }
 
-    void createBall()
-    {
-        GameObject obj = (GameObject)Instantiate(projectile, throwPosition.position, new Quaternion());
-        Vector3 direction = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
-
-
-        obj.GetComponent<Rigidbody>().AddForce(direction * throwForce);
+//    void createBall()
+//    {
+//        GameObject obj = (GameObject)Instantiate(projectile, throwPosition.position, new Quaternion());
+//        Vector3 direction = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
+//
+//
+//        obj.GetComponent<Rigidbody>().AddForce(direction * throwForce);
+//		
+//    }
+//
+	IEnumerator createBall()
+	{
+		yield return new WaitForSeconds (3f);
+		GameObject obj = (GameObject)Instantiate(projectile, throwPosition.position, new Quaternion());
+		Vector3 direction = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
 		
-    }
+		
+		obj.GetComponent<Rigidbody>().AddForce(direction * throwForce);
+		
+	}
 
-    public void throwBall(bool throwButtonDown) 
+	public void throwBall(bool throwButtonDown) 
     {
         if (throwButtonDown && canThrow())
         {
             throwTimer = throwTime;
             coolDownTimer = coolDownTime;
-            createBall();
-			anim.SetBool("Throw",true);
+			StartCoroutine("createBall");
+            //createBall();
+			anim.SetTrigger("Throw");
 
 		}
     }

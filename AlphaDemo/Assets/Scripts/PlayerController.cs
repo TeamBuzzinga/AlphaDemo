@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 	private AnimatorStateInfo layer2CurrentState;	// a reference to the current state of the animator, used for layer 2
 	private CapsuleCollider col;					// a reference to the capsule collider of the character
 	private AudioSource audioSource;
-	private ThrowMechanics throwMechanics;
+	//private ThrowMechanics throwMechanics;
 	private NpcTakeDamage npcTakeDamage;
 	//private AddForcetoObject push;
 
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 	{
 		anim = GetComponent<Animator>();					  
 		col = GetComponent<CapsuleCollider>();				
-		throwMechanics = GetComponent<ThrowMechanics> ();
+		//throwMechanics = GetComponent<ThrowMechanics> ();
 		if(anim.layerCount ==2)
 			anim.SetLayerWeight(1, 1);
 		audioSource = GetComponent<AudioSource> ();
