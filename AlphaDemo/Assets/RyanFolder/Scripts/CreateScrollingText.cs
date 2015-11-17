@@ -14,6 +14,7 @@ public class CreateScrollingText : MonoBehaviour {
             GameObject obj = (GameObject)Instantiate(creditTextObject.gameObject, Vector3.zero , Quaternion.Euler(0, 15, 0));
             obj.GetComponent<TextMesh>().text = txtLine;
             obj.transform.parent = this.transform;
+            obj.transform.localScale = new Vector3(1, 1, 1);
             obj.transform.localPosition = new Vector3(0, -i * .5f, 0);
             i++;
         }
