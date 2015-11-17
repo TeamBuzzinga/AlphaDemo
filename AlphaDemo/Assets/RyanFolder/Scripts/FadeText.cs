@@ -7,6 +7,7 @@ public class FadeText : MonoBehaviour {
     float currentGoal = 0;
     TextMesh textMesh;
 
+
     void Start()
     {
         textMesh = GetComponent<TextMesh>();
