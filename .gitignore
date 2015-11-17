@@ -31,3 +31,6 @@ Icon?
 ehthumbs.db
 [Tt]humbs.db
 AlphaDemo/Assets/RAIN/Editor/RAINProjectState.asset
+*.meta
+AlphaDemo/Assets/RyanFolder/Animator/CamenaAnimations/PathToHoverIntro.anim.meta
+*.meta
