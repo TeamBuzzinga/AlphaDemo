@@ -37,9 +37,18 @@ public class AudioNpcTakeDamage : MonoBehaviour {
         {
             for (int i = 0; i < p_systems.Length; i++)
             {
-                p_systems[i].Play();
+                if (p_systems[i].isStopped)
+                    p_systems[i].Play();
             }
         }
+        else
+        {
+            for (int i = 0; i < p_systems.Length; i++)
+            {
+                p_systems[i].Stop();
+            }
+        }
+
     }
 
 
