@@ -7,9 +7,12 @@ public class AudioNpcTakeDamage : MonoBehaviour {
 
 	private AIRig npc;
 	private GameObject player;
+    private ParticleSystem[] p_systems;
+    private bool hit=false;
 	// Use this for initialization
 	void Start () {
 		npc = GetComponentInChildren<AIRig>();
+        p_systems = GetComponentsInChildren<ParticleSystem>();
 	}
 
 	public void takeDamage() {
@@ -27,4 +30,19 @@ public class AudioNpcTakeDamage : MonoBehaviour {
             npc.AI.Mind.AI.WorkingMemory.SetItem<bool>("stun", true);
         }
     }
+
+    void Update()
+    {
+        if (npc.AI.Mind.AI.WorkingMemory.GetItem<bool>("stun"))
+        {
+            for (int i = 0; i < p_systems.Length; i++)
+            {
+                p_systems[i].Play();
+            }
+        }
+    }
+
+
+
+
 }
