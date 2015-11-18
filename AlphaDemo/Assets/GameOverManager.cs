@@ -42,8 +42,10 @@ using UnityEngine.UI;
 			if (catch1 + catch2 > 2) {
                 restartTimer += Time.deltaTime;
                 triggerLoseGame();
-                if (restartTimer>=restartDelay)
+                if (restartTimer>=restartDelay){
 					Application.LoadLevel(Application.loadedLevel);
+					ThrowMechanics.numberOfBalls = 3;
+				}
 			}
         }
 

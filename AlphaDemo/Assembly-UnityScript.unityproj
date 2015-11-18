@@ -6,10 +6,10 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-	<ProjectGuid>{1903B940-1319-3397-91A5-97FD6CB1CFAA}</ProjectGuid>
+	<ProjectGuid>{E2C94BB6-507E-16A2-0DCD-8AB1DBC106D2}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -45,45 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AI\Actions\action.cs" />
-     <Compile Include="Assets\AI\Actions\catch_player.cs" />
-     <Compile Include="Assets\AI\Actions\catch_player2.cs" />
-     <Compile Include="Assets\AI\Actions\catch_player3.cs" />
-     <Compile Include="Assets\AI\Actions\destroy_body.cs" />
-     <Compile Include="Assets\AI\Actions\prediction.cs" />
-     <Compile Include="Assets\AI\Actions\take_damage.cs" />
-     <Compile Include="Assets\CollectKeys.cs" />
-     <Compile Include="Assets\Dingfengprefab\AudioNpcTakeDamage.cs" />
-     <Compile Include="Assets\Dingfengprefab\customAI.cs" />
-     <Compile Include="Assets\Dingfengprefab\rotate.cs" />
-     <Compile Include="Assets\DoorOpen.cs" />
-     <Compile Include="Assets\GameOverManager.cs" />
-     <Compile Include="Assets\RyanFolder\Scripts\CreateScrollingText.cs" />
-     <Compile Include="Assets\RyanFolder\Scripts\FadeText.cs" />
-     <Compile Include="Assets\RyanFolder\Scripts\MenuManager.cs" />
-     <Compile Include="Assets\RyanFolder\Scripts\TriggerValue.cs" />
-     <Compile Include="Assets\Scripts\BallCountTextChangeScript.cs" />
-     <Compile Include="Assets\Scripts\BallMechanics.cs" />
-     <Compile Include="Assets\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\GameLogic.cs" />
-     <Compile Include="Assets\Scripts\HUDScript.cs" />
-     <Compile Include="Assets\Scripts\MapPlayerPosition.cs" />
-     <Compile Include="Assets\Scripts\Menu\HighScores.cs" />
-     <Compile Include="Assets\Scripts\Menu\ScreenManager.cs" />
-     <Compile Include="Assets\Scripts\Menu\StartGame.cs" />
-     <Compile Include="Assets\Scripts\NPC\NPCmovement.cs" />
-     <Compile Include="Assets\Scripts\NPC\cam.cs" />
-     <Compile Include="Assets\Scripts\NpcTakeDamage.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\RyanCameralController.cs" />
-     <Compile Include="Assets\Scripts\TPCamera.cs" />
-     <Compile Include="Assets\Scripts\ThrowMechanics.cs" />
-     <Compile Include="Assets\Scripts\WalkMechanics.cs" />
-     <Compile Include="Assets\SidFolder\FootstepsMute.cs" />
-     <Compile Include="Assets\SidFolder\FootstepsOn.cs" />
-     <Compile Include="Assets\WinDoorScript.cs" />
-     <Compile Include="Assets\WinningScript.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.js" />
      <None Include="Assets\TaichiCharacterPack\Shaders\toon_cutoff.shader" />
      <None Include="Assets\Objects\CeilingLamp\archibase.net.txt" />
      <None Include="Assets\RAIN\Editor\Shaders\AspectSphereShader.shader" />

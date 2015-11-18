@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 	public float animSpeed = 1.5f;				// a public setting for overall animator animation speed
 	public float lookSmoother = 3f;				// a smoothing setting for camera motion
 	public bool useCurves;						// a setting for teaching purposes to show use of curves
+	public GameObject player;
 //	public AudioClip walkSound;
 //	private float volLowRange = .5f;
 //	private float volHighRange = 1.0f;
@@ -29,12 +30,13 @@ public class PlayerController : MonoBehaviour
 	private NpcTakeDamage npcTakeDamage;
 	//private AddForcetoObject push;
 
+
 	static int idleState = Animator.StringToHash("Base Layer.Idle");	
 	static int locoState = Animator.StringToHash("Base Layer.Locomotion");			// these integers are references to our animator's states
 	static int jumpState = Animator.StringToHash("Base Layer.Jump");				// and are used to check state for various actions to occur
 	static int crouchState = Animator.StringToHash("Base Layer.Crouch");
 	static int crouchWalkState = Animator.StringToHash("Base Layer.CrouchWalk");
-	static int attackState = Animator.StringToHash("Base Layer.Attack");
+	//static int attackState = Animator.StringToHash("Base Layer.Attack");
 
 	void Start ()
 	{
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
 	
 	void Update ()
 	{
+		//Debug.Log (player.transform.position.ToString ());
 		float h = Input.GetAxis("Horizontal");				// setup h variable as our horizontal input axis
 		float v = Input.GetAxis("Vertical");				// setup v variables as our vertical input axis
 		anim.SetFloat("Speed", v);							// set our animator's float parameter 'Speed' equal to the vertical input axis				
@@ -171,6 +174,15 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
+	}
+
+	void OnCollisionEnter(Collision other) {
+		if (other.gameObject.tag == "Bin") {
+			ThrowMechanics.numberOfBalls += 3;
+			if(ThrowMechanics.numberOfBalls > 10) {
+				ThrowMechanics.numberOfBalls -= ThrowMechanics.numberOfBalls%10;
+			}
+		}
 	}
 }
 
