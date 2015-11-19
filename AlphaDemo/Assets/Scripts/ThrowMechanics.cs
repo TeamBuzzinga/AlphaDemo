@@ -79,7 +79,7 @@ public class ThrowMechanics : MonoBehaviour {
             throwTimer = throwTime;
             coolDownTimer = coolDownTime;
 			StartCoroutine("createBall");
-            //createBall();
+            createBall();
 			anim.SetTrigger("Throw");
 
 		}
