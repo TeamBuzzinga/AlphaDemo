@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ThrowMechanics : MonoBehaviour {
     public GameObject projectile;
@@ -8,6 +9,7 @@ public class ThrowMechanics : MonoBehaviour {
     public float throwForce;
     public float throwTime;//The time that it takes to complete one throw
     public float coolDownTime;//The time before you can throw another ball
+	public static int numberOfBalls = 3;//Amount of balls left to throw
 
     float throwTimer;
     float coolDownTimer;
@@ -24,9 +26,11 @@ public class ThrowMechanics : MonoBehaviour {
         updateTimers();
         if (Input.GetButtonDown("Fire1"))
         {
-            throwBall(true);
+			if(numberOfBalls > 0){
+            	throwBall(true);
+				numberOfBalls --;
+			}
         }
-
     }
 
 
@@ -75,7 +79,7 @@ public class ThrowMechanics : MonoBehaviour {
             throwTimer = throwTime;
             coolDownTimer = coolDownTime;
 			StartCoroutine("createBall");
-            //createBall();
+            createBall();
 			anim.SetTrigger("Throw");
 
 		}
