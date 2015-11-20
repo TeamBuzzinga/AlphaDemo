@@ -12,6 +12,10 @@ using UnityEngine.UI;
 		public GameObject NPC2;
 		//public GameObject NPC3;
 
+	public GameObject winBox;
+
+	//for fireworks
+		private ParticleSystem[] p_systems;
 
 		private AIRig aiRig1 = null;
 		private AIRig aiRig2 = null;
@@ -28,9 +32,23 @@ using UnityEngine.UI;
 			aiRig2 = NPC2.GetComponentInChildren<AIRig> ();
 			//aiRig3 = NPC3.GetComponentInChildren<AIRig> ();
 
-        }
+		winBox = GameObject.Find("Win Box");
 
+		p_systems = winBox.GetComponentsInChildren<ParticleSystem>();
 
+		Debug.Log(p_systems[0].name);
+
+//			for (int i = 0; i < p_systems.Length; i++)
+//			{
+//				if (p_systems[i].name == "Fireworks")
+//				{
+//
+//				p_systems[i].enableEmission = false;
+//				}
+//			}
+	}
+	
+	
         void Update ()
         {
 			int catch1=aiRig1.AI.WorkingMemory.GetItem<int>("catch_time");
@@ -59,6 +77,16 @@ using UnityEngine.UI;
 
         public void triggerWinGame()
         {
+
+			for (int i = 0; i < p_systems.Length; i++)
+			{
+				if (p_systems[i].name == "Fireworks")
+				{
+					if (p_systems[i].isStopped)
+						p_systems[i].Play();
+				}
+			}
+
             gameOverText.text = "You win";
             anim.SetTrigger("GameOver");
          }
