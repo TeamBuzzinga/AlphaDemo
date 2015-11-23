@@ -6,56 +6,115 @@ public class MenuManager : MonoBehaviour {
     public Animator cameraAnimator;
     public Animator creditsAnimator;
 
-    public float timeDelay;//The amount of time before switching to another option
+    public float timeDelay = .75f;//The amount of time before switching to another option
+
+    public Button[] introButtons = new Button[4];
 
     float lastHInput;
     float lastVInput;
     float verticalTimer;
     float horizontalTimer;
-    Vector2 currentButtonsPosition;
+    bool selectOption;
+    Vector2 currentPosition;
     Animator menuAnim;
 
-    Button[,] introButtons = new Button[4, 1];
+    
 
     enum State { Intro, Options, Credits };
     State currentState;
 
     void Start()
     {
-        currentButtonsPosition = Vector2.zero;
+        currentPosition = Vector2.zero;
         currentState = State.Intro;
         menuAnim = GetComponent<Animator>();
     }
 
-    void setUpIntroButtons()
+
+
+    void shiftCursor()
+    {
+       print("Iam sam");
+       switch (currentState)
+        {
+            case State.Intro:
+                handleIntroSelection();
+                break;
+            case State.Credits:
+                handleCreditsMenu();
+                break;
+            case State.Options:
+                handleOptionsMenu();
+                break;
+
+        }
+    }
+
+    void handleOptionsMenu()
+    {
+
+    }
+    
+    void handleCreditsMenu()
     {
 
     }
 
-    void shiftCursor(int horizontalShift, int verticalShift)
+    void handleIntroSelection()
     {
-        Button[,] buttons = retrieveCurrentArray();
-        currentButtonsPosition += new Vector2(horizontalShift, verticalShift);
-        if (currentButtonsPosition.x >= buttons.Length)
+        if (lastVInput < -0.01f && verticalTimer <= 0)
         {
-            currentButtonsPosition += Vector2.left;
+            verticalTimer = timeDelay;
+            currentPosition += Vector2.up;
+            adjustCurrentPosition(introButtons);
+            introButtons[(int)currentPosition.y].Select();
+        }
+        else if (lastVInput > 0.01f && verticalTimer <= 0)
+        {
+            verticalTimer = timeDelay;
+            currentPosition -= Vector2.up;
+            adjustCurrentPosition(introButtons);
+            introButtons[(int)currentPosition.y].Select();
+        }
+        else if (lastVInput < .01f && lastVInput > -.01f)
+        {
+            verticalTimer = 0;
+        }
+
+        if (selectOption)
+        {
+            introButtons[(int)currentPosition.y].onClick.Invoke();
         }
         
     }
 
-    Button[,] retrieveCurrentArray()
+    void adjustCurrentPosition(Button[] buttons)
     {
-        switch(currentState)
+        int x = (int)currentPosition.x;
+        int y = (int)currentPosition.y;
+        if (x < 0)
         {
-            case State.Intro:
-                return introButtons;
+            //x += buttons.GetLength(0);
         }
-        return null;
+        if (y < 0)
+        {
+            y += buttons.GetLength(0);
+        }
+        //x = x % buttons.GetLength(0);
+        y = y % buttons.GetLength(0);
+        currentPosition = new Vector2(x, y);
     }
 
-    void Upate()
+    void Update()
     {
+        lastHInput = Input.GetAxisRaw("Horizontal");
+        lastVInput = Input.GetAxisRaw("Vertical");
+        selectOption = Input.GetButtonDown("Jump");
 
+        verticalTimer = Mathf.MoveTowards(verticalTimer, 0, Time.deltaTime);
+        horizontalTimer = Mathf.MoveTowards(horizontalTimer, 0, Time.deltaTime);
+
+        shiftCursor();
     }
 
     public void optionsPressed()
@@ -74,6 +133,11 @@ public class MenuManager : MonoBehaviour {
         cameraAnimator.SetTrigger("Credits");
         menuAnim.SetTrigger("Credits");
         creditsAnimator.SetTrigger("Credits");
+    }
+
+    public void quitButtonPressed()
+    {
+        Application.Quit();
     }
 
     public void toIntroScreen()
