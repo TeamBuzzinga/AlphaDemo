@@ -9,12 +9,13 @@ public class MenuManager : MonoBehaviour {
     public float timeDelay = .75f;//The amount of time before switching to another option
 
     public Button[] introButtons = new Button[4];
+    public Button[] creditsButtons = new Button[1];
 
     float lastHInput;
     float lastVInput;
     float verticalTimer;
     float horizontalTimer;
-    bool selectOption;
+   // bool selectOption;
     Vector2 currentPosition;
     Animator menuAnim;
 
@@ -34,7 +35,7 @@ public class MenuManager : MonoBehaviour {
 
     void shiftCursor()
     {
-       print("Iam sam");
+       
        switch (currentState)
         {
             case State.Intro:
@@ -57,11 +58,21 @@ public class MenuManager : MonoBehaviour {
     
     void handleCreditsMenu()
     {
-
+        //print(selectOption);
+        if (Input.GetButtonDown("Cancel"))
+        {
+            creditsButtons[0].onClick.Invoke();
+        }
+        
+        if (Mathf.Abs(lastHInput) > .01f || Mathf.Abs(lastVInput) > .01f)
+        {
+            creditsButtons[0].Select();
+        }
     }
 
     void handleIntroSelection()
     {
+        //print(selectOption);
         if (lastVInput < -0.01f && verticalTimer <= 0)
         {
             verticalTimer = timeDelay;
@@ -79,11 +90,6 @@ public class MenuManager : MonoBehaviour {
         else if (lastVInput < .01f && lastVInput > -.01f)
         {
             verticalTimer = 0;
-        }
-
-        if (selectOption)
-        {
-            introButtons[(int)currentPosition.y].onClick.Invoke();
         }
         
     }
@@ -107,15 +113,19 @@ public class MenuManager : MonoBehaviour {
 
     void Update()
     {
+        shiftCursor();
+
         lastHInput = Input.GetAxisRaw("Horizontal");
         lastVInput = Input.GetAxisRaw("Vertical");
-        selectOption = Input.GetButtonDown("Jump");
+        //selectOption = Input.GetButtonDown("Jump");
 
         verticalTimer = Mathf.MoveTowards(verticalTimer, 0, Time.deltaTime);
         horizontalTimer = Mathf.MoveTowards(horizontalTimer, 0, Time.deltaTime);
 
-        shiftCursor();
+        
     }
+
+
 
     public void optionsPressed()
     {
@@ -133,6 +143,7 @@ public class MenuManager : MonoBehaviour {
         cameraAnimator.SetTrigger("Credits");
         menuAnim.SetTrigger("Credits");
         creditsAnimator.SetTrigger("Credits");
+        currentState = State.Credits;
     }
 
     public void quitButtonPressed()
@@ -145,5 +156,6 @@ public class MenuManager : MonoBehaviour {
         cameraAnimator.SetTrigger("Intro");
         menuAnim.SetTrigger("Intro");
         creditsAnimator.SetTrigger("Intro");
+        currentState = State.Intro;
     }
 }
