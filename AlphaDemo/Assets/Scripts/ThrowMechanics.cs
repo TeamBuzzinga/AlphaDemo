@@ -26,10 +26,10 @@ public class ThrowMechanics : MonoBehaviour {
         updateTimers();
         if (Input.GetButtonDown("Fire1"))
         {
-			if(numberOfBalls > 0){
+			//if(numberOfBalls > 0){
             	throwBall(true);
-				numberOfBalls --;
-			}
+			//	numberOfBalls --;
+			//}
         }
     }
 
@@ -51,26 +51,25 @@ public class ThrowMechanics : MonoBehaviour {
         }
     }
 
-//    void createBall()
-//    {
-//        GameObject obj = (GameObject)Instantiate(projectile, throwPosition.position, new Quaternion());
-//        Vector3 direction = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
-//
-//
-//        obj.GetComponent<Rigidbody>().AddForce(direction * throwForce);
-//		
-//    }
-//
-	IEnumerator createBall()
-	{
-		yield return new WaitForSeconds (3f);
-		GameObject obj = (GameObject)Instantiate(projectile, throwPosition.position, new Quaternion());
-		Vector3 direction = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
+    void throw_ball()
+    {
+        GameObject obj = (GameObject)Instantiate(projectile, throwPosition.position, new Quaternion());
+        Vector3 direction = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
+
+        obj.GetComponent<Rigidbody>().AddForce(direction * throwForce);
+
+    }
+
+    //IEnumerator createBall()
+    //{
+    //    yield return new WaitForSeconds (3f);
+    //    GameObject obj = (GameObject)Instantiate(projectile, throwPosition.position, new Quaternion());
+    //    Vector3 direction = new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
 		
 		
-		obj.GetComponent<Rigidbody>().AddForce(direction * throwForce);
+    //    obj.GetComponent<Rigidbody>().AddForce(direction * throwForce);
 		
-	}
+    //}
 
 	public void throwBall(bool throwButtonDown) 
     {
@@ -78,8 +77,7 @@ public class ThrowMechanics : MonoBehaviour {
         {
             throwTimer = throwTime;
             coolDownTimer = coolDownTime;
-			StartCoroutine("createBall");
-            createBall();
+			//StartCoroutine("createBall");
 			anim.SetTrigger("Throw");
 
 		}

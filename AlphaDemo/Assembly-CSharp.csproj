@@ -58,6 +58,7 @@
      <Compile Include="Assets\Dingfengprefab\rotate.cs" />
      <Compile Include="Assets\DoorOpen.cs" />
      <Compile Include="Assets\GameOverManager.cs" />
+     <Compile Include="Assets\RyanFolder\OptionHandler.cs" />
      <Compile Include="Assets\RyanFolder\Scripts\CreateScrollingText.cs" />
      <Compile Include="Assets\RyanFolder\Scripts\FadeText.cs" />
      <Compile Include="Assets\RyanFolder\Scripts\MenuManager.cs" />
