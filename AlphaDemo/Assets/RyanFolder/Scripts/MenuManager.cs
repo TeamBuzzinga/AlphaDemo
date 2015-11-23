@@ -114,6 +114,11 @@ public class MenuManager : MonoBehaviour {
     void Update()
     {
         shiftCursor();
+        if (Input.anyKeyDown)
+        {
+            menuAnim.SetTrigger("SkipIntro");            
+            cameraAnimator.SetTrigger("SkipIntro");
+        }
 
         lastHInput = Input.GetAxisRaw("Horizontal");
         lastVInput = Input.GetAxisRaw("Vertical");
@@ -155,7 +160,11 @@ public class MenuManager : MonoBehaviour {
     {
         cameraAnimator.SetTrigger("Intro");
         menuAnim.SetTrigger("Intro");
-        creditsAnimator.SetTrigger("Intro");
+        if (!creditsAnimator.GetCurrentAnimatorStateInfo(0).IsName("IdleText"))
+        {
+            creditsAnimator.SetTrigger("Intro");
+        }
+        
         currentState = State.Intro;
     }
 }
