@@ -13,13 +13,13 @@ public class catch_player2 : RAINAction
 	public override void Start(RAIN.Core.AI ai)
 	{
 		base.Start(ai);
-		gameObject = ai.WorkingMemory.GetItem<GameObject> ("varCharClose");
-		animator = gameObject.GetComponent<Animator> ();
+		//gameObject = ai.WorkingMemory.GetItem<GameObject> ("varCharClose");
+		//animator = gameObject.GetComponent<Animator> ();
 	}
 	
 	public override ActionResult Execute(RAIN.Core.AI ai)
 	{
-		animator.SetTrigger ("TakeDamage");
+		//animator.SetTrigger ("TakeDamage");
 		if(ai.WorkingMemory.ItemExists("catch_time"))
 		{
 			
