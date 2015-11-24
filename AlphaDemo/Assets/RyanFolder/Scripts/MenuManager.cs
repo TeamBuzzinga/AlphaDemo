@@ -10,6 +10,8 @@ public class MenuManager : MonoBehaviour {
 
     public Button[] introButtons = new Button[4];
     public Button[] creditsButtons = new Button[1];
+    public Slider[] optionsSliders = new Slider[2];
+    public Button optionsBackButton;
 
     float lastHInput;
     float lastVInput;
@@ -53,7 +55,31 @@ public class MenuManager : MonoBehaviour {
 
     void handleOptionsMenu()
     {
-
+        if (Input.GetButtonDown("Cancel"))
+        {
+            optionsBackButton.onClick.Invoke();
+            return;
+        }
+        if (lastVInput < -0.01f && verticalTimer <= 0)
+        {
+            verticalTimer = timeDelay;
+            currentPosition += Vector2.up;
+            adjustCurrentPosition(optionsSliders);
+            optionsSliders[(int)currentPosition.y].Select();
+        }
+        else if (lastVInput > 0.01f && verticalTimer <= 0)
+        {
+            verticalTimer = timeDelay;
+            currentPosition -= Vector2.up;
+            adjustCurrentPosition(optionsSliders);
+            optionsSliders[(int)currentPosition.y].Select();
+        }
+        else if (lastVInput < .01f && lastVInput > -.01f)
+        {
+            adjustCurrentPosition(optionsSliders);
+            verticalTimer = 0;
+        }
+        optionsSliders[(int)currentPosition.y].value += Mathf.Ceil(Input.GetAxisRaw("Horizontal"));
     }
     
     void handleCreditsMenu()
@@ -94,7 +120,7 @@ public class MenuManager : MonoBehaviour {
         
     }
 
-    void adjustCurrentPosition(Button[] buttons)
+    void adjustCurrentPosition(Selectable[] buttons)
     {
         int x = (int)currentPosition.x;
         int y = (int)currentPosition.y;
@@ -136,6 +162,7 @@ public class MenuManager : MonoBehaviour {
     {
         cameraAnimator.SetTrigger("Options");
         menuAnim.SetTrigger("Options");
+        currentState = State.Options;
     }
 
     public void playButtonPressed()
